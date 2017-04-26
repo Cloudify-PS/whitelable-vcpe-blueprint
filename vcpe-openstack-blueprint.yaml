@@ -25,7 +25,7 @@ node_templates:
 
   csp_host:
     type: cloudify.openstack.nodes.Server
-      properties:
+    properties:
       image: { get_input: image }
       flavor: { get_input: flavor }
       cloudify_agent:
