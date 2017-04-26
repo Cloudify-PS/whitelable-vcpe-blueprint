@@ -36,7 +36,7 @@ node_templates:
     interfaces:
       cloudify.lifecycle.interfaces:
         create:
-          implemetation: scripts/install_ui.sh
+          implementation: scripts/install_ui.sh
           inputs:
             scp_ui_zip: {get_input: scp_ui_zip}
     relationships:
