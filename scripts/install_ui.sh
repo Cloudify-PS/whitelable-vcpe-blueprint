@@ -1,6 +1,7 @@
-#!/bash
+#!/bin/sh
 cd /opt
 
-yum -y install wget unzip
+
+sudo yum -y install wget unzip
 
 wget ${scp_ui_zip}

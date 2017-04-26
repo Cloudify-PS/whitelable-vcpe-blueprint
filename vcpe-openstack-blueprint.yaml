@@ -34,7 +34,7 @@ node_templates:
   csp_ui:
     type: cloudify.nodes.ApplicationModule
     interfaces:
-      cloudify.lifecycle.interfaces:
+      cloudify.interfaces.lifecycle:
         create:
           implementation: scripts/install_ui.sh
           inputs:
@@ -51,7 +51,7 @@ node_templates:
   csp_backend:
     type: cloudify.nodes.ApplicationModule
     interfaces:
-      cloudify.lifecycle.interfaces:
+      cloudify.interfaces.lifecycle:
         create:
           implementation: scripts/install_backend.sh
           inputs:
