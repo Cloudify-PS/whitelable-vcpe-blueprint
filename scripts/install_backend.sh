@@ -28,9 +28,11 @@ sudo sed -i /home/cspbackend/postgresql.cfg -e "/MANAGER/s/185.98.148.216/172.16
 
 sudo sed -i /home/cspbackend/postgresql.cfg -e "/MOCK_CLOUDIFY/s/True/False/"
 
+sudo sed -i /home/cspbackend/postgresql.cfg -e "/MANAGER_PASSWORD/s/Day21NB5ILWy/nEQSwrbNPz1w/"
 
 sudo ./prepare_backend.sh
 
+sudo python /opt/partner-backend-1.0/load-tests/load_test.py
 
 # MOCK_RMS=True
 #
