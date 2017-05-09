@@ -1,19 +1,17 @@
 #!/bin/bash
 
-
 cd /opt/
 
 yum -y install wget unzip
 
 wget ${scp_backend_zip}
 
-unzip
+#unzip
 
-cd partner_backend
+#cd partner_backend
 
-./install_backend.sh
+#./install_backend.sh
 
 # edit configuratuion
 
-
-./prepare_backend.sh
+#./prepare_backend.sh
