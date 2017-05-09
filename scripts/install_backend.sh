@@ -1,19 +1,22 @@
 #!/bin/bash
 
-cd /opt/
 
 
-sudo yum install epel-release
+sudo yum -y install epel-release
 
 sudo yum -y install wget unzip
 
 sudo yum -y install python-gunicorn
+
+
+cd /opt/
 
 sudo wget ${scp_backend_zip}
 
 sudo unzip *.zip
 
 rm -rf *.zip
+
 
 cd partner-backend-1.0
 
