@@ -32,7 +32,9 @@ sudo sed -i /home/cspbackend/postgresql.cfg -e "/MANAGER_PASSWORD/s/Day21NB5ILWy
 
 sudo ./prepare_backend.sh
 
-sudo python /opt/partner-backend-1.0/load-tests/load_test.py
+cd /opt/partner-backend-1.0/load-tests
+
+sudo python load_test.py
 
 # MOCK_RMS=True
 #
