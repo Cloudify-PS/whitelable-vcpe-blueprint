@@ -2,16 +2,22 @@
 
 cd /opt/
 
-yum -y install wget unzip
+sudo yum -y install wget unzip
 
-wget ${scp_backend_zip}
+sudo yum -y install python-gunicorn
 
-#unzip
+sudo wget ${scp_backend_zip}
 
-#cd partner_backend
+sudo unzip *.zip
 
-#./install_backend.sh
+cd partner_backend
+
+sudo ./install_backend.sh
 
 # edit configuratuion
 
-#./prepare_backend.sh
+# sudo ./prepare_backend.sh
+
+
+# MOCK_RMS=True
+#
