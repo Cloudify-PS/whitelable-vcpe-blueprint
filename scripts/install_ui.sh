@@ -21,6 +21,6 @@ sudo echo "{  \"ip\": \"${manager_ip}\" }" > dist/conf/manager.json
 
 cd dist/backend
 
-sudo sh -c 'nohup openvpn /etc/openvpn/client.ovpn 2>&1 > /tmp/ui_log.txt &' 
+sudo sh -c 'nohup node server.js 2>&1 > /tmp/ui_log.txt &' 
 
 #sudo nohup node server.js &
