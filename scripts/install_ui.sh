@@ -17,8 +17,10 @@ sudo wget ${scp_ui_zip}
 
 sudo tar -xzf *.tar.gz
 
-sudo echo "{  \"ip\": \"172.16.0.3\" }" > dist/conf/manager.json
+sudo echo "{  \"ip\": \"${manager_ip}\" }" > dist/conf/manager.json
 
 cd dist/backend
 
-sudo nohup node server.js &
+sudo sh -c 'nohup openvpn /etc/openvpn/client.ovpn 2>&1 > /tmp/ui_log.txt &' 
+
+#sudo nohup node server.js &
