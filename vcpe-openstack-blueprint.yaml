@@ -18,6 +18,12 @@ inputs:
   scp_backend_zip:
     default: "https://s3-eu-west-1.amazonaws.com/cloudify-labs/vcpe/partner-backend-1_0.zip"
 
+  manager_ip:
+    default: "172.16.0.3"
+
+  manager_password:
+    default: "nEQSwrbNPz1w"
+
 node_templates:
 
   manager:
@@ -39,6 +45,7 @@ node_templates:
           implementation: scripts/install_ui.sh
           inputs:
             scp_ui_zip: {get_input: scp_ui_zip}
+            manager_ip:  { get_input: manager_ip }
     relationships:
       - target: csp_host
         type: cloudify.relationships.contained_in
@@ -56,6 +63,8 @@ node_templates:
           implementation: scripts/install_backend.sh
           inputs:
             scp_backend_zip: { get_input: scp_backend_zip }
+            manager_ip:  { get_input: manager_ip }
+            manager_password: { get_input: manager_password }
     relationships:
       - target: csp_host
         type: cloudify.relationships.contained_in
