@@ -3,8 +3,12 @@ Description=CSP UI service
 After=csp.service
 
 [Service]
+PIDFile=/run/ui/pid
 WorkingDirectory=/opt/dist/backend
-ExecStart=node server.js
+ExecStart=/usr/bin/node server.js
+ExecStop=/bin/kill -s HUP $MAINPID
 Type=simple
 
+
 [Install]
+WantedBy=multi-user.target

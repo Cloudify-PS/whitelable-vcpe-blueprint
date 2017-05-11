@@ -2,6 +2,9 @@
 
 SERVICE_DEF=$(ctx download-resource "config/ui.service")
 
+sudo systemctl stop ui.service
+
+sudo systemctl disable ui.service
 
 cd /opt
 
@@ -24,6 +27,11 @@ sudo tar -xzf *.tar.gz
 sudo echo "{  \"ip\": \"${manager_ip}\" }" > dist/conf/manager.json
 
 sudo cp  $SERVICE_DEF /usr/lib/systemd/system/ui.service
+
+sudo sudo rm -rf /etc/systemd/system/ui.service
+
+sudo systemctl daemon-reload
+
 
 sudo systemctl enable ui.service
 sudo systemctl start ui.service
