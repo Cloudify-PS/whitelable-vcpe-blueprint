@@ -1,4 +1,8 @@
 #!/bin/sh
+
+SERVICE_DEF=$(ctx download-resource "config/ui.service")
+
+
 cd /opt
 
 sudo yum -y install wget unzip
@@ -19,8 +23,7 @@ sudo tar -xzf *.tar.gz
 
 sudo echo "{  \"ip\": \"${manager_ip}\" }" > dist/conf/manager.json
 
-cd dist/backend
+sudo cp  $SERVICE_DEF /usr/lib/systemd/system/ui.service
 
-sudo sh -c 'nohup node server.js 2>&1 > /tmp/ui_log.txt &'
-
-exit
+sudo systemctl enable ui.service
+sudo systemctl start ui.service

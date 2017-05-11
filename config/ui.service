@@ -1,0 +1,10 @@
+[Unit]
+Description=CSP UI service
+After=csp.service
+
+[Service]
+WorkingDirectory=/opt/dist/backend
+ExecStart=node server.js
+Type=simple
+
+[Install]
