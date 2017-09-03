@@ -12,6 +12,11 @@ sudo yum -y install wget unzip
 
 sudo yum -y install epel-release
 
+# Install the http-parser package due to temporary ABSENCE in centos
+# https://bugzilla.redhat.com/show_bug.cgi?id=1481008
+
+sudo rpm -i http://springdale.math.ias.edu/data/puias/unsupported/7/x86_64/http-parser-2.7.1-3.sdl7.x86_64.rpm
+
 sudo yum -y install nodejs
 
 sudo sed -i /var/lib/pgsql/data/pg_hba.conf -e "/127.0.0.1/s/ident/md5/"
